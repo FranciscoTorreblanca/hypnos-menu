@@ -4,7 +4,7 @@ import { SiInstagram, SiGooglemaps } from "@icons-pack/react-simple-icons"
 import { motion } from "framer-motion"
 
 import CATEGORIES from "./constants/categories.ts"
-import ITEMS from "./constants/ITEMS.ts"
+import ITEMS from "./constants/items.ts"
 
 function formatMXN(value: number) {
     return value.toLocaleString("es-MX", { style: "currency", currency: "MXN" })
