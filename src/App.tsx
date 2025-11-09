@@ -74,14 +74,14 @@ export default function HypnosMenuLanding() {
         )
         if (q) {
             arr = arr.filter((it: (typeof ITEMS)[0]) =>
-                normalize(it.description).includes(q)
+                normalize(it.name).includes(q)
             )
         }
         if (sort === "name") {
             arr = arr
                 .slice()
                 .sort((a: (typeof ITEMS)[0], b: (typeof ITEMS)[0]) =>
-                    normalize(a).localeCompare(normalize(b))
+                    normalize(a.name).localeCompare(normalize(b.name))
                 )
         } else if (sort === "price") {
             arr = arr
@@ -178,7 +178,7 @@ export default function HypnosMenuLanding() {
                         >
                             Todas{" "}
                             <span className="ml-1 opacity-70">
-                                {ITEMS.length}
+                                {Object.values(ITEMS).length}
                             </span>
                         </button>
                         {cats.map((c) => (
@@ -248,8 +248,7 @@ export default function HypnosMenuLanding() {
                                             </div>
                                         </div>
                                         <p className="mt-2 text-sm text-yellow-200/80">
-                                            {ITEMS[item.name] ||
-                                                "Delicado y equilibrado, sello de Hypnos."}
+                                            {item.description}
                                         </p>
                                     </motion.article>
                                 ))}
